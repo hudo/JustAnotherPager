@@ -1,0 +1,14 @@
+﻿@model JA.Sample.Model.PagerModel
+
+@using JA.Pagination
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        @Html.Raw(Pager.Build(Model.CurrentPage, Model.TotalPages, page => $"?page={page}",
+            resourceOverrides: resource => { resource.Previous = "&laquo;"; resource.Next = "&raquo;"; })
+        .Render())
+    </div>
+</div>

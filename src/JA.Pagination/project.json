@@ -1,0 +1,16 @@
+﻿{
+  "version": "1.0.0-*",
+  "authors": [ "Hrvoje Hudo" ],
+  "description": "Pager, works nice with Bootstrap",
+  "title": "Just Another Pager",
+
+  "dependencies": {
+    "NETStandard.Library": "1.1.0"
+  },
+
+  "frameworks": {
+    "netstandard1.1": {
+      "imports": "dnxcore50"
+    }
+  }
+}
