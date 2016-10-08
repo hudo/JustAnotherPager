@@ -22,4 +22,18 @@ or, if you want to override content:
 Generated HTML will look like:
 
 ```html
-<ul class="pagination">	<li><a href="#" >&laquo;</a></li>	<li class="active"><a href="?page=1" >1</a></li>	<li><a href="?page=2" >2</a></li>	<li><a href="?page=3" >3</a></li>	<li class="disabled"><span>...</span></li>	<li><a href="?page=20" >20</a></li>	<li><a href="?page=2" >&raquo;</a></li></ul>```
+<ul class="pagination">
+	<li><a href="#" >&laquo;</a></li>
+	<li class="active"><a href="?page=1" >1</a></li>
+	<li><a href="?page=2" >2</a></li>
+	<li><a href="?page=3" >3</a></li>
+	<li class="disabled"><span>...</span></li>
+	<li><a href="?page=20" >20</a></li>
+	<li><a href="?page=2" >&raquo;</a></li>
+</ul>
+```
+
+## Nuget
+
+Package name: JA.Pagination
+https://www.nuget.org/packages/JA.Pagination

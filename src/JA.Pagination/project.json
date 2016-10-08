@@ -1,9 +1,14 @@
 ﻿{
-  "version": "1.0.0-*",
+  "version": "1.0.1-*",
   "authors": [ "Hrvoje Hudo" ],
   "description": "Renders HTML pager, works nice with Bootstrap css",
   "title": "Just Another Pager",
-  "projectUrl": "https://github.com/hudo/JustAnotherPager",
+  "packOptions": {
+    "tags": [ "pager", "pagination", "asp.net mvc pager", "razor" ],
+    "projectUrl": "https://github.com/hudo/JustAnotherPager",
+    "owners": [ "Hrvoje Hudo" ],
+    "summary": "Renders HTML pager, works nice with Bootstrap css"
+  },
 
   "dependencies": {
     "NETStandard.Library": "1.1.0"
