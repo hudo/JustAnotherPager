@@ -1,8 +1,9 @@
 ﻿{
   "version": "1.0.0-*",
   "authors": [ "Hrvoje Hudo" ],
-  "description": "Pager, works nice with Bootstrap",
+  "description": "Renders HTML pager, works nice with Bootstrap css",
   "title": "Just Another Pager",
+  "projectUrl": "https://github.com/hudo/JustAnotherPager",
 
   "dependencies": {
     "NETStandard.Library": "1.1.0"
