@@ -7,9 +7,7 @@ namespace JA.Sample.Controllers
     {
         public IActionResult Index(int? page)
         {
-            if (!page.HasValue) page = 1;
-
-            var model = new PagerModel {CurrentPage = page.Value, TotalPages = 20};
+            var model = new PagerModel {CurrentPage = page.GetValueOrDefault(1), TotalPages = 20};
 
             return View(model);
         } 
