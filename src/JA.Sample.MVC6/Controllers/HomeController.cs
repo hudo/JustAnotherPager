@@ -1,7 +1,5 @@
 ﻿using JA.Sample.Model;
-using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace JA.Sample.Controllers
 {
@@ -14,13 +12,5 @@ namespace JA.Sample.Controllers
 
             return View(model);
         } 
-    }
-
-    public static class B
-    {
-        public static IHtmlContent Bla(this IHtmlHelper helper)
-        {
-            return helper.Raw("asd");
-        }
     }
 }

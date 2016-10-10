@@ -10,8 +10,7 @@ Reference JA.Pagination.MVC5 or MVC6 nuget, and with that there will be extensio
 @Html.RenderPager(Model.CurrentPage, Model.TotalPages, 
     page => $"?page={page}",
     resourceOverrides: resource => { resource.Previous = "&laquo;"; resource.Next = "&raquo;"; })
-1```
-
+```
 
 ## How to use it (direct call)
 
