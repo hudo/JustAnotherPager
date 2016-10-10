@@ -8,7 +8,7 @@
     "projectUrl": "https://github.com/hudo/JustAnotherPager",
     "owners": [ "Hrvoje Hudo" ],
     "summary": "Renders HTML pager, works nice with Bootstrap css",
-    "releaseNotes": "Allowed targeting of full .NET 4.6 frameworks"
+    "releaseNotes": ""
   },
 
   "dependencies": {
