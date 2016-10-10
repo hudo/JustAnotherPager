@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ArrayOfArrayOfString>
+    <ArrayOfString>
+      <string>C:\Projects\JustAnotherPager\src\JA.Pagination\project.json</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\Projects\JustAnotherPager\src\JA.Sample\Views\Home\Index.cshtml</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\Projects\JustAnotherPager\src\JA.Sample\project.json</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\Projects\JustAnotherPager\src\JA.Pagination.MVC5\HtmlExtension.cs</string>
+    </ArrayOfString>
+  </ArrayOfArrayOfString>
+</ArrayOfArrayOfArrayOfString>

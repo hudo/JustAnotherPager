@@ -1,0 +1,11 @@
+﻿@using JA.Pagination.MVC5
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="row">
+    <div class="col-sm-12">
+        @Html.RenderPager(1, 20, x => $"?page={x}")
+    </div>
+</div>
