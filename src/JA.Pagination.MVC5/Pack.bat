@@ -1,0 +1,1 @@
+@nuget pack JA.Pagination.MVC5.nuspec -OutputDirectory ..\..\InternalRepository

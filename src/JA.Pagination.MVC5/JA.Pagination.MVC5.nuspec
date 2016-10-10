@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>JA.Pagination.MVC5</id>
+        <version>1.0</version>
+        <title>Just Another Pagination for MVC5</title>
+        <authors>Hrvoje Hudo</authors>
+        <owners>Hrvoje Hudo</owners>
+        <projectUrl>https://github.com/hudo/JustAnotherPager</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Renders HTML pager, works nice with Bootstrap css. For usage in .NET 4.6 / MVC 5</description>
+        <copyright>Copyright Hrvoje Hudo, 2016</copyright>
+        <tags>Pager Pagination MVC ASP.NET Bootstrap</tags>
+        <dependencies>
+            <dependency id="Microsoft.AspNet.Mvc" version="5.2.3" />
+            <dependency id="System.Runtime" version="4.0.2" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="bin\Release\JA.Pagination.dll" target="lib\net46\JA.Pagination.dll" />
+        <file src="bin\Release\JA.Pagination.MVC5.dll" target="lib\net46\JA.Pagination.MVC5.dll" />
+    </files>
+</package>
