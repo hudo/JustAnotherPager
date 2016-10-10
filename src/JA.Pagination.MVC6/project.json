@@ -1,0 +1,26 @@
+﻿{
+  "version": "1.0.0",
+  "authors": [ "Hrvoje Hudo" ],
+  "description": "Renders HTML pager, works nice with Bootstrap css and MVC 6",
+  "title": "Just Another Pager for MVC6",
+  "packOptions": {
+    "tags": [ "pager", "pagination", "asp.net mvc pager", "razor" ],
+    "projectUrl": "https://github.com/hudo/JustAnotherPager",
+    "owners": [ "Hrvoje Hudo" ],
+    "summary": "Renders HTML pager, works nice with Bootstrap css",
+    "releaseNotes": "Allowed targeting of full .NET 4.6 frameworks"
+  },
+
+  "dependencies": {
+    "JA.Pagination": "1.0.2",
+    "Microsoft.AspNetCore.Html.Abstractions": "1.0.0",
+    "Microsoft.AspNetCore.Mvc.ViewFeatures": "1.0.1",
+    "NETStandard.Library": "1.6.0"
+  },
+
+  "frameworks": {
+    "netstandard1.6": {
+      "imports": "dnxcore50"
+    }
+  }
+}

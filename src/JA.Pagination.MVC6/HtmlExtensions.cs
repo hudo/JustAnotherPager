@@ -1,17 +1,17 @@
 ﻿using System;
-using System.Web;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Html;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace JA.Pagination.MVC5
+namespace JA.Pagination.MVC6
 {
-    public static class HtmlExtension
+    public static class HtmlExtensions
     {
-        public static IHtmlString RenderPager(this HtmlHelper helper, int currentPage, int totalPages, Func<int, string> urlBuilder)
+        public static IHtmlContent RenderPager(this IHtmlHelper helper, int currentPage, int totalPages, Func<int, string> urlBuilder)
         {
             return helper.Raw(Pager.Build(currentPage, totalPages, urlBuilder).Render());
         }
 
-        public static IHtmlString RenderPager(this HtmlHelper helper, 
+        public static IHtmlContent RenderPager(this IHtmlHelper helper,
             int currentPage,
             int totalPages,
             Func<int, string> urlBuilder,
