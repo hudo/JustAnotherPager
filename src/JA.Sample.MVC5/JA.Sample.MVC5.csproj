@@ -44,12 +44,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="JA.Pagination, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\JA.Pagination.MVC5.1.0.0\lib\net46\JA.Pagination.dll</HintPath>
+    <Reference Include="JA.Pagination, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JA.Pagination.MVC5.1.0.3\lib\net46\JA.Pagination.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="JA.Pagination.MVC5, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\JA.Pagination.MVC5.1.0.0\lib\net46\JA.Pagination.MVC5.dll</HintPath>
+      <HintPath>..\..\packages\JA.Pagination.MVC5.1.0.3\lib\net46\JA.Pagination.MVC5.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -62,6 +62,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
