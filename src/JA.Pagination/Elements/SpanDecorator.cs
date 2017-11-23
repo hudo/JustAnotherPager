@@ -1,6 +1,4 @@
-﻿using JA.Pagination.Elements;
-
-namespace JA.Pagination
+﻿namespace JA.Pagination.Elements
 {
     internal class SpanDecorator : IRenderable
     {
