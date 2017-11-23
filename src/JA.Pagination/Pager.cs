@@ -96,12 +96,12 @@ namespace JA.Pagination
             return pages.Select(x => x.Render()).Aggregate((state, current) => state + current);
         }
 
-        private interface IRenderable
+        interface IRenderable
         {
             string Render();
         }
 
-        private class BeginList : IRenderable
+        class BeginList : IRenderable
         {
             private readonly string _cssClass;
 
@@ -116,7 +116,7 @@ namespace JA.Pagination
             }
         }
 
-        private class EndList : IRenderable
+        class EndList : IRenderable
         {
             public string Render()
             {
@@ -124,7 +124,7 @@ namespace JA.Pagination
             }
         }
 
-        private class ContentItem : IRenderable
+        class ContentItem : IRenderable
         {
             private readonly string _text;
 
@@ -139,7 +139,7 @@ namespace JA.Pagination
             }
         }
 
-        private class LinkDecorator : IRenderable
+        class LinkDecorator : IRenderable
         {
             private readonly IRenderable _inner;
             private readonly string _url;
@@ -158,7 +158,7 @@ namespace JA.Pagination
             }
         }
 
-        private class ListDecorator : IRenderable
+        class ListDecorator : IRenderable
         {
             private readonly IRenderable _inner;
             private readonly string _cssClass = "";
@@ -181,7 +181,7 @@ namespace JA.Pagination
             }
         }
 
-        private class SpanDecorator : IRenderable
+        class SpanDecorator : IRenderable
         {
             private readonly IRenderable _inner;
 

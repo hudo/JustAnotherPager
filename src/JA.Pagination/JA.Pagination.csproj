@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Renders HTML pager, works nicely with Bootstrap css</Description>
+    <AssemblyTitle>Just Another Pager</AssemblyTitle>
+    <VersionPrefix>2.0.0</VersionPrefix>
+    <Authors>Hrvoje Hudo</Authors>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <AssemblyName>JA.Pagination</AssemblyName>
+    <PackageId>JA.Pagination</PackageId>
+    <PackageTags>pager;pagination;asp.net mvc pager;razor</PackageTags>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/hudo/JustAnotherPager</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/hudo/JustAnotherPager</RepositoryUrl>
+  </PropertyGroup>
+
+
+
+</Project>

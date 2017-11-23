@@ -1,15 +1,10 @@
-﻿@model JA.Sample.Model.PagerModel
-@using JA.Pagination
-@using JA.Pagination.MVC6
-
+﻿@using JA.Pagination.MVC6
 @{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="row">
-    <div class="col-sm-12">
-        @Html.RenderPager(Model.CurrentPage, Model.TotalPages, 
-            page => $"?page={page}",
-            resourceOverrides: resource => { resource.Previous = "&laquo;"; resource.Next = "&raquo;"; })
-    </div>
+    
+    @Html.RenderPager((int) ViewBag.Page, (int) ViewBag.Total)
+
 </div>

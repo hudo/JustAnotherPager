@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Renders HTML pager, works nice with Bootstrap css and MVC Core 6</Description>
+    <AssemblyTitle>Just Another Pager for MVC6</AssemblyTitle>
+    <Authors>Hrvoje Hudo</Authors>
+    <TargetFramework>netstandard1.6</TargetFramework>
+    <AssemblyName>JA.Pagination.MVC6</AssemblyName>
+    <PackageId>JA.Pagination.MVC6</PackageId>
+    <VersionPrefix>2.0.0</VersionPrefix>
+    <PackageTags>pager;pagination;asp.net mvc pager;razor;core</PackageTags>
+    <PackageProjectUrl>https://github.com/hudo/JustAnotherPager</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/hudo/JustAnotherPager</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\JA.Pagination\JA.Pagination.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Html.Abstractions" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="1.1.5" />
+  </ItemGroup>
+
+</Project>

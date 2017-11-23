@@ -6,7 +6,7 @@
 
 <div class="row">
     <div class="col-sm-12">
-        @Html.RenderPager(1, 20, 
+        @Html.RenderPager((int)ViewBag.Page, (int)ViewBag.Total, 
             x => $"?page={x}", 
             resourceOverrides: resource => { resource.Previous = "&laquo;"; resource.Next = "&raquo;"; })
     </div>

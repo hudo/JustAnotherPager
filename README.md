@@ -4,7 +4,13 @@ Nothing fancy here, just a convinient pager that works nicely with Bootstrap.
 
 ## How to use it (MVC 5 or 6)
 
-Reference JA.Pagination.MVC5 or MVC6 nuget, and with that there will be extension method for HtmlHelper available:
+Reference JA.Pagination.MVC5 (Full .NET) or MVC6 (Core) nuget, and with that there will be extension method for HtmlHelper available:
+
+```cs
+@Html.RenderPager(Model.CurrentPage, Model.TotalPages)  
+```
+
+or with overrides:
 
 ```cs
 @Html.RenderPager(Model.CurrentPage, Model.TotalPages, 
@@ -12,7 +18,7 @@ Reference JA.Pagination.MVC5 or MVC6 nuget, and with that there will be extensio
     resourceOverrides: resource => { resource.Previous = "&laquo;"; resource.Next = "&raquo;"; })
 ```
 
-## How to use it (direct call)
+## How to use it (direct call, without MVC)
 
 This package usage doesn't require any ASP.NET dependencies. 
 In your Razor view make sure you have variables: current page, total page count.   
