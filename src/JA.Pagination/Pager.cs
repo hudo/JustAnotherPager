@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using JA.Pagination.Elements;
 
 namespace JA.Pagination
 {
@@ -61,146 +62,59 @@ namespace JA.Pagination
             var min = Math.Max(1, _currentPage - 2);
             var max = Math.Min(_total, _currentPage + 2);
 
-            var pages = new List<IRenderable> { new BeginList(_ulClass) };
+            var pages = GenerateHtmlElements(min, max);
+
+            return pages
+                .Select(page => page.Render())
+                .Aggregate((state, current) => state + current);
+        }
+
+        private IEnumerable<IRenderable> GenerateHtmlElements(int min, int max)
+        {
+            yield return new BeginList(_ulClass);
 
             // Previous
-            pages.Add(new ListDecorator(new LinkDecorator(new ContentItem(_resource.Previous), _currentPage > 1 ? _urlBuilder(_currentPage - 1) : "#")));
+            yield return new ListDecorator(
+                new LinkDecorator(
+                    new ContentItem(_resource.Previous), _currentPage > 1
+                        ? _urlBuilder(_currentPage - 1)
+                        : "#"));
 
             // 1
-            if (min >= 2) pages.Add(new ListDecorator(new LinkDecorator(new ContentItem("1"), _urlBuilder(1))));
+            if (min >= 2) yield return new ListDecorator(
+                new LinkDecorator(
+                    new ContentItem("1"), _urlBuilder(1)));
 
             // ...
-            var dots = new ListDecorator(new SpanDecorator(new ContentItem(_resource.Separator)), _liDisabledClass);
-            if (min >= 3) pages.Add(dots);
+            var dots = new ListDecorator(
+                new SpanDecorator(
+                    new ContentItem(_resource.Separator)), _liDisabledClass);
+
+            if (min >= 3) yield return dots;
 
             // 4 5 [6] 7 9
-            foreach(var x in Enumerable.Range(min, max - min + 1).ToList())
+            foreach (var x in Enumerable.Range(min, max - min + 1).ToList())
             {
-                pages.Add(
+                yield return 
                     new ListDecorator(
                         new LinkDecorator(
-                            new ContentItem(x.ToString(CultureInfo.InvariantCulture)), _urlBuilder(x)), x == _currentPage ? _currentPageClass : String.Empty));
+                            new ContentItem(x.ToString(CultureInfo.InvariantCulture)), _urlBuilder(x)), x == _currentPage ? _currentPageClass : string.Empty);
             }
 
             // ...
-            if (max + 1 < _total) pages.Add(dots);
+            if (max + 1 < _total) yield return dots;
 
             // 999
-            if (max < _total) pages.Add(new ListDecorator(new LinkDecorator(new ContentItem(_total.ToString(CultureInfo.InvariantCulture)), _urlBuilder(_total))));
+            if (max < _total) yield return new ListDecorator(
+                new LinkDecorator(
+                    new ContentItem(_total.ToString(CultureInfo.InvariantCulture)), _urlBuilder(_total)));
 
             // Next
-            pages.Add(new ListDecorator(new LinkDecorator(new ContentItem(_resource.Next), _currentPage < _total ? _urlBuilder(_currentPage + 1) : "#")));
+            yield return new ListDecorator(
+                new LinkDecorator(
+                    new ContentItem(_resource.Next), _currentPage < _total ? _urlBuilder(_currentPage + 1) : "#"));
 
-            pages.Add(new EndList());
-
-            return pages.Select(x => x.Render()).Aggregate((state, current) => state + current);
+            yield return new EndList();
         }
-
-        interface IRenderable
-        {
-            string Render();
-        }
-
-        class BeginList : IRenderable
-        {
-            private readonly string _cssClass;
-
-            public BeginList(string cssClass)
-            {
-                _cssClass = cssClass;
-            }
-
-            public string Render()
-            {
-                return "<ul" + (string.IsNullOrEmpty(_cssClass) ? ">" : (" class=\"" + _cssClass + "\">"));
-            }
-        }
-
-        class EndList : IRenderable
-        {
-            public string Render()
-            {
-                return "</ul>";
-            }
-        }
-
-        class ContentItem : IRenderable
-        {
-            private readonly string _text;
-
-            public ContentItem(string text)
-            {
-                _text = text;
-            }
-
-            public string Render()
-            {
-                return _text;
-            }
-        }
-
-        class LinkDecorator : IRenderable
-        {
-            private readonly IRenderable _inner;
-            private readonly string _url;
-            private readonly string _additionalAtt;
-
-            public LinkDecorator(IRenderable inner, string url, string additionalAtt = null)
-            {
-                _inner = inner;
-                _url = url;
-                _additionalAtt = additionalAtt;
-            }
-
-            public string Render()
-            {
-                return string.Format("<a href=\"{0}\" {1}>{2}</a>", _url, _additionalAtt, _inner.Render());
-            }
-        }
-
-        class ListDecorator : IRenderable
-        {
-            private readonly IRenderable _inner;
-            private readonly string _cssClass = "";
-
-            public ListDecorator(IRenderable inner)
-            {
-                _inner = inner;
-            }
-
-            public ListDecorator(IRenderable inner, string cssClass) : this(inner)
-            {
-                _cssClass = cssClass;
-            }
-
-            public string Render()
-            {
-                return string.Format("<li{0}>{1}</li>",
-                    (string.IsNullOrEmpty(_cssClass) ? "" : " class=\"" + _cssClass + "\""),
-                    _inner.Render());
-            }
-        }
-
-        class SpanDecorator : IRenderable
-        {
-            private readonly IRenderable _inner;
-
-            public SpanDecorator(IRenderable inner)
-            {
-                _inner = inner;
-            }
-
-            public string Render()
-            {
-                return string.Format("<span>{0}</span>", _inner.Render());
-            }
-        }
-    }
-
-    public sealed class ContentResource
-    {
-        public string Previous { get; set; } = "Prev";
-        public string Next { get; set; } = "Next";
-        public string Separator { get; set; } = "...";
     }
 }
